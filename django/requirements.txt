@@ -1,0 +1,16 @@
+Django>=4.2
+moviepy==1.0.3
+imageio
+imageio-ffmpeg
+django-cors-headers>=3.13.0
+channels>=4.2,<5.0
+channels-redis>=4.0
+numpy
+opencv-python
+mediapipe
+fer
+tensorflow>=2.19.0
+djangorestframework>=3.14
+deepface
+uvicorn>=0.21.0
+python-socketio==5.13.0

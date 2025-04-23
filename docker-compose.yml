@@ -1,0 +1,55 @@
+version: '3.10'
+
+x-common-variables: &common-variables
+  REACT_APP_SERVER_PORT: 5173
+
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      <<: *common-variables
+      NODE_PATH: src
+    ports:
+      - "21000:5173"
+    command: npm run dev -- --host 0.0.0.0
+    volumes:
+      - ./frontend:/app
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - facialapp
+
+
+
+  backend:
+    build:
+      context: ./django
+
+    command: 
+      sh -c "python manage.py migrate &&
+      uvicorn backend.asgi:application
+      --host 0.0.0.0 --port 8000 --reload"
+
+    ports:
+      - "21100:8000"
+    environment:
+      <<: *common-variables
+    env_file:
+      - .env
+    volumes:
+      - ./django:/app
+      - ./django/db.sqlite3:/app/db.sqlite3
+      - ./django/media:/app/media
+      - ./django/weights:/app/weights
+
+    restart: unless-stopped
+
+    networks:
+      - facialapp
+networks:
+  facialapp:
+    external: true
+    

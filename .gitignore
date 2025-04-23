@@ -1,0 +1,27 @@
+# Django
+*.py[cod]
+__pycache__/
+db.sqlite3
+/media/
+/weights/
+
+# Environment
+.env
+
+# VSCode, PyCharm, etc.
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
+
+# Node / React
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env.local
+
+# Logs
+*.log
+
+# Mac
+.DS_Store
