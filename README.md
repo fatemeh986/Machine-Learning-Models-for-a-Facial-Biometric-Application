@@ -18,4 +18,3 @@ A Dockerized Django + React application for face verification and identification
 1. Clone the repo  
    ```bash
    git clone git@github.com:<you>/<repo>.git
-   cd Amine-Skills-github
