@@ -7,6 +7,10 @@ A Dockerized Django + React application for face verification and identification
 - **Backend:** Django REST Framework, Uvicorn, SQLite (dev), TensorFlow, OpenCV, MediaPipe, FER, DeepFace  
 - **Frontend:** React + Vite, SCSS  
 - **Containerization:** Docker & Docker Compose
+- **Evaluation Metrics:** False Acceptance Rate (FAR), False Rejection Rate (FRR), and Receiver Operating Characteristic (ROC) curves for face verification
+
+Identification accuracy, confusion matrices, and Cumulative Match Characteristic (CMC) curves for face identification
+
 
 ## 🚀 Getting Started
 
